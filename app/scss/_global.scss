@@ -1,5 +1,4 @@
 body {
-	height: 100%;
 	color: #000;
 	font-weight: 400;
 	font-size: 17px;
@@ -47,6 +46,17 @@ body {
     &--green {
         background-color: $green-700;
     }
+
+    &--border-green {
+        background-color: transparent;
+        border: 1px solid $green-700;
+    }
+}
+
+.logo {
+    max-width: 206px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .sr-only {

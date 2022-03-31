@@ -2,6 +2,10 @@
 @import 'vars';
 @import 'reset';
 
-/* @import 'mixins';
-@import 'libs'; */
+@import 'mixins';
+/*@import 'libs'; */
 @import 'global';
+
+//Components
+@import 'components/header.scss';
+@import 'components/footer.scss';

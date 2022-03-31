@@ -1,0 +1,26 @@
+//line-clamp
+
+/// @param {Value}          $font-size    
+/// @param {Unitless Value} $line-height 
+/// @param {Number}         $lines-to-show 
+/// @example scss
+/// p {
+///   @include line-clamp($font-size: 16px, $line-height: 1.5, $lines-to-show: 3);
+/// }
+@mixin line-clamp($font-size,
+    $line-height,
+    $lines-to-show) {
+    @if unitless($line-height)==false {
+        $line-height: create-unitless-line-height($font-size, $line-height);
+    }
+
+    display: block;
+    display: -webkit-box;
+    font-size: $font-size;
+    max-height: ($font-size * $line-height * $lines-to-show);
+    line-height: $line-height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines-to-show;
+}
