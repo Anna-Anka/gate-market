@@ -1,0 +1,10 @@
+.plug {
+    background-color: $red-800;
+
+    &__title {
+        max-width: 822px;
+        margin: 0 auto 40px;
+        color: $white;
+        text-align: center;
+    }
+}

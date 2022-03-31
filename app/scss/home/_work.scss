@@ -1,0 +1,62 @@
+.work {
+    padding: 80px 0 60px;
+    text-align: center;
+
+    &__wrapper {
+        max-width: 1134px;
+        margin: 0 auto;
+    }
+
+    &__subtitle {
+        max-width: 678px;
+        margin: 0 auto 40px;
+        font-size: 28px;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        max-width: 316px;
+        padding-top: 146px;
+
+        &--content::before {
+            background-image: url("../img/work/content.svg");
+        }
+
+        &--audience::before {
+            background-image: url("../img/work/audience.svg");
+        }
+
+        &--income::before {
+            background-image: url("../img/work/income.svg");
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 160px;
+            height: 114px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transform: translateX(-50%);
+            content: "";
+        }
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    &__title {
+        font-weight: $fw-500;
+        font-size: 20px; 
+    }
+}

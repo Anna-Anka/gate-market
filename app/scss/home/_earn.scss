@@ -1,0 +1,27 @@
+.earn {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__content {
+        margin-right: 20px;
+        text-align: left;
+    }
+
+    &__title {
+        max-width: 620px;
+        margin-bottom: 40px;
+    }
+
+    &__image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 546px;
+        max-width: 640px;
+        width: 100%;
+    }
+}

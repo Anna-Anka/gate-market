@@ -1,5 +1,7 @@
 .header {
     padding-top: 21px;
+    background-color: $red-800;
+    color: $white;
 
     &__navigation {
         display: flex;
@@ -12,7 +14,7 @@
         padding: 7px 16px;
         font-weight: $fw-500;
         line-height: 1.6;
-        border: 1px solid $green-700;
+        border: 1px solid rgba($white, 0.32);
         border-radius: 8px;
         display: flex;
         justify-content: center;
@@ -32,8 +34,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background-color: $white;
-        color: $dark-800;
+        background-color: $red-800;
         max-width: 700px;
         padding: 33px 30px 20px 17px;
         font-weight: $fw-400;
