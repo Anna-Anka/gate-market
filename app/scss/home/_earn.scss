@@ -1,9 +1,8 @@
 .earn {
-
     &__wrapper {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
     }
 
     &__content {
@@ -17,11 +16,11 @@
     }
 
     &__image {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 546px;
-        max-width: 640px;
         width: 100%;
+        max-width: 640px;
+        height: 546px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
 }

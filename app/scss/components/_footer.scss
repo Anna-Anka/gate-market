@@ -15,7 +15,6 @@
         max-width: 150px;
         height: 28px;
         margin-bottom: 24px;
-        filter: invert(63%) sepia(13%) saturate(1083%) hue-rotate(164deg) brightness(100%) contrast(86%);
     }
 
     &__left,
@@ -24,15 +23,8 @@
         flex-direction: column;
     }
 
-    &__info,
-    &__list {
+    &__info {
         display: flex;
-    }
-
-    &__item {
-        &:not(:last-child) {
-            margin-right: 24px;
-        }
     }
 
     &__link {
@@ -59,8 +51,17 @@
             content: "";
         }
     }
+}
 
-    &__card {
+.pay {
+    display: flex;
+    &__item {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+
+    &__link {
         display: inline-block;
         width: 45px;
         height: 20px;
