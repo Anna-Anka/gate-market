@@ -1,0 +1,32 @@
+.ready {
+    max-width: 620px;
+    padding: 40px 10px 50px;
+    margin: 0 auto;
+
+
+    &__wrapper {
+        border: 1px solid rgba($black, 0.12);
+        border-radius: 20px;
+        padding: 24px;
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: $fw-400;
+        margin-bottom: 12px;
+    }
+
+    &__date {
+        margin-bottom: 35px;
+    }
+
+    &__link {
+        margin-bottom: 60px;
+        display: inline-block;
+    }
+
+    &__subtext {
+        color: $gray-400;
+        display: block;
+    }
+}
