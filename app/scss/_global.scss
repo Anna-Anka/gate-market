@@ -19,6 +19,7 @@ body {
 
 .lock {
 	overflow: hidden;
+    background-color: rgba($black, 0.6);
 }
 
 .button {
@@ -31,7 +32,7 @@ body {
 
 .logo {
     vertical-align: middle;
-    
+
     &--gray {
         filter: invert(63%) sepia(13%) saturate(1083%) hue-rotate(164deg) brightness(100%) contrast(86%);
     }
@@ -96,4 +97,8 @@ body {
     font-weight: $fw-400;
     font-size: 40px;
     line-height: 1.2;
+}
+
+.link {
+    color: $blue-700;
 }
