@@ -28,6 +28,10 @@ body {
     line-height: 1.4;
     background-color: $red-800;
     border-radius: 8px;
+
+    @include max-w($sm) {
+        padding: 10px 18px;
+    }
 }
 
 .logo {
@@ -79,18 +83,6 @@ body {
         content: "";
     }
 }
-
-// .number {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 52px;
-//     height: 52px;
-//     margin: 0 auto 20px;
-//     color: $white;
-//     background-color: $green-700;
-//     border-radius: 50%;
-// }
 
 .title {
     margin-bottom: 12px;

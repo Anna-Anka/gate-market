@@ -1,32 +1,36 @@
 .ready {
     max-width: 620px;
-    padding: 40px 10px 50px;
     margin: 0 auto;
+    padding: 0 10px;
+    @include adaptiv-value("padding-top", 40, 30, 0);
+    @include adaptiv-value("padding-bottom", 50, 30, 0);
 
 
     &__wrapper {
         border: 1px solid rgba($black, 0.12);
         border-radius: 20px;
-        padding: 24px;
+        @include adaptiv-value("padding", 24, 15, 0);
     }
 
     &__title {
-        font-size: 28px;
-        font-weight: $fw-400;
+        @include adaptiv-value("font-size", 24, 20, 0);
+
         margin-bottom: 12px;
+        font-weight: $fw-400;
     }
 
     &__date {
-        margin-bottom: 35px;
+        @include adaptiv-value("margin-bottom", 35, 20, 0);
     }
 
     &__link {
-        margin-bottom: 60px;
+        @include adaptiv-value("margin-bottom", 60, 25, 0);
+
         display: inline-block;
     }
 
     &__subtext {
-        color: $gray-400;
         display: block;
+        color: $gray-400;
     }
 }
