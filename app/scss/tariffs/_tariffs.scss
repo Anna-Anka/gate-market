@@ -1,7 +1,8 @@
 .tariffs {
     max-width: 620px;
     margin: 0 auto;
-    padding: 40px 10px 0;
+    padding: 0 10px;
+    @include adaptiv-value("padding-top", 40, 30, 0);
 
     &__welcome {
         width: 100%;
@@ -10,7 +11,8 @@
 
     &__content {
         width: 100%;
-        padding: 24px 24px 32px;
+        @include adaptiv-value("padding", 24, 15, 0);
+        @include adaptiv-value("padding-bottom", 32, 15, 0);
         border: 1px solid rgba($black, 0.12);
         border-top: 0;
         border-radius: 0 0 20px 20px;
@@ -18,20 +20,22 @@
 
     &__img {
         display: block;
-        height: 360px;
+        @include adaptiv-value("height", 360, 300, 0);
         border-radius: 20px 20px 0 0;
+        width: 100%;
+        object-fit: cover;
     }
 
     &__title {
         margin-bottom: 16px;
         font-weight: $fw-400;
-        font-size: 28px;
+        @include adaptiv-value("font-size", 28, 24, 0);
     }
 
     &__text:not(:last-child),
     &__text p:not(:last-child),
     &__list:not(:last-child) {
-        margin-bottom: 30px;
+        @include adaptiv-value("margin-bottom", 30, 15, 0);
     }
 
     &__link {
@@ -40,17 +44,7 @@
 
     &__items {
         width: 100%;
-        margin-bottom: 38px;
-    }
-
-    &__item {
-        &:not(:last-child) {
-            margin-bottom: 20px;
-        }
-
-        padding: 22px 24px;
-        border: 1px solid rgba($black, 0.12);
-        border-radius: 20px;
+        @include adaptiv-value("margin-bottom", 38, 25, 0);
     }
 
     &__item,
@@ -60,9 +54,31 @@
         justify-content: space-between;
     }
 
+        &__item {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            @include adaptiv-value("padding", 24, 15, 0);
+            @include adaptiv-value("padding-top", 22, 15, 0);
+            @include adaptiv-value("padding-bottom", 22, 15, 0);
+            border: 1px solid rgba($black, 0.12);
+            border-radius: 20px;
+
+            @include max-w($sm) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
     &__subtitle {
         margin-right: 15px;
         font-weight: $fw-400;
+        font-size: 17px;
+
+        @include max-w($sm) {
+            margin-bottom: 15px;
+        }
     }
 
     &__price {
@@ -98,10 +114,10 @@
     &__subtext {
         font-size: 14px;
         text-align: center;
-        margin-bottom: 40px;
+        @include adaptiv-value("margin-bottom", 40, 30, 0);
     }
 
     &__pay {
-        margin-bottom: 48px;
+        @include adaptiv-value("margin-bottom", 48, 30, 0);
     }
 }
