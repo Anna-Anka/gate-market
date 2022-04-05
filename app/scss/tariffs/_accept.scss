@@ -33,6 +33,20 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        transition: filter 0.3s, opacity 0.3s, box-shadow 0.3s;
+
+        &:focus {
+            box-shadow: 0 0 0 2px $red-800;
+            border-radius: 4px;
+        }
+
+        &:hover {
+            filter: invert(29%) sepia(100%) saturate(3687%) hue-rotate(332deg) brightness(93%) contrast(89%);
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
     }
 
     &__list {
@@ -94,9 +108,14 @@
         padding: 10px 12px;
         border: 1px solid rgba($black, 0.24);
         border-radius: 5px;
+        transition: border-color 0.3s;
 
         &::placeholder {
             color: $gray-400;
+        }
+
+        &:focus {
+            border-color: $blue-700;
         }
     }
 

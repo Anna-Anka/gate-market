@@ -11,20 +11,6 @@ $(function () {
         $('.for__item:nth-child(8)').after($('.for__item:nth-child(7)'));
     }
 
-    
-
-    $('.for__items').masonry({
-        itemSelector: '.for__item',
-        gutter: 20,
-        columnWidth: '.for__item',
-        percentPosition: true,
-        horizontalOrder: true
-    }).imagesLoaded(function () {
-        $('.for__items').masonry('reload');
-    });
-
-
-
     $('.tariffs__btn').on('click', function () {
         $('.accept').addClass('accept--active');
         $('.wrapper').addClass('lock');
@@ -37,5 +23,20 @@ $(function () {
             modal.removeClass('accept--active');
             $('.wrapper').removeClass('lock');
         }
+    });
+
+    $('.accept__close').on('click', function () {
+        $('.accept').removeClass('accept--active');
+        $('.wrapper').removeClass('lock');
+    });
+
+    $('.for__items').masonry({
+        itemSelector: '.for__item',
+        gutter: 20,
+        columnWidth: '.for__item',
+        percentPosition: true,
+        horizontalOrder: true
+    }).imagesLoaded(function () {
+        $('.for__items').masonry('reload');
     });
 });

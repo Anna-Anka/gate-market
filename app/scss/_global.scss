@@ -1,24 +1,24 @@
 body {
-	color: $black;
-	font-weight: 400;
-	font-size: 17px;
+    color: $black;
+    font-weight: 400;
+    font-size: 17px;
     font-family: $ubuntu;
-	line-height: 1.3;
-	background-color: $white;
+    line-height: 1.3;
+    background-color: $white;
 }
 
 .container {
-	max-width: 1310px;
-	margin: 0 auto;
-	padding: 0 15px;
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .wrapper {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .lock {
-	overflow: hidden;
+    overflow: hidden;
     background-color: rgba($black, 0.6);
 }
 
@@ -29,10 +29,33 @@ body {
     background-color: $red-800;
     border-radius: 8px;
     @include adaptiv-value("font-size", 20, 17, 0);
+    border: 1px solid transparent;
+    transition: background-color 0.5s, border-color 0.3s, color 0.3s, opacity 0.3s;
+
+    &:focus {
+        background-color: transparent;
+        border-color: $red-800;
+        color: $red-800
+    }
+
+    &:hover {
+        background-color: $white;
+        color: $red-800;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
 
     &--white {
         background-color: $white;
         color: $dark-800;
+
+        &:focus {
+            color: $white;
+            border-color: $white;
+            background-color: transparent;
+        }
     }
 
     @include max-w($sm) {
@@ -48,6 +71,19 @@ body {
         filter: invert(63%) sepia(13%) saturate(1083%) hue-rotate(164deg) brightness(100%) contrast(86%);
     }
 
+    &:focus {
+        box-shadow: 0 0 0 2px $white;
+        border-radius: 3px;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+
     &__img {
         @include adaptiv-value("max-width", 206, 124, 0);
         @include adaptiv-value("height", 40, 24, 0);
@@ -57,21 +93,25 @@ body {
             width: 82px;
             height: 15px;
         }
+
+        &--footer {
+            width: 150px;
+            height: 28px;
+        }
     }
 }
 
-
 .sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	overflow: hidden;
-	white-space: nowrap;
-	border: 0;
-	clip: rect(0 0 0 0);
-	clip-path: inset(100%);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
 }
 
 .section {
@@ -79,20 +119,6 @@ body {
     @include adaptiv-value("padding", 60, 40, 0);
     padding-right: 0;
     padding-left: 0;
-}
-
-.line {
-    position: relative;
-
-    &::before {
-        position: absolute;
-        bottom: -60px;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: rgba($black, 0.12);
-        content: "";
-    }
 }
 
 .title {
@@ -104,4 +130,18 @@ body {
 
 .link {
     color: $blue-700;
+    transition: color 0.3s, box-shadow 0.3s, opacity 0.3s;
+
+    &:focus {
+        box-shadow: 0 0 0 2px $red-800;
+        border-radius: 4px;
+    }
+
+    &:hover {
+        color: $red-800;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
 }

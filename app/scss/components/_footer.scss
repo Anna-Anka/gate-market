@@ -6,7 +6,7 @@
     &__wrapper {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
 
         @include max-w($md) {
@@ -26,8 +26,7 @@
     }
 
     &__logo {
-        max-width: 150px;
-        height: 28px;
+        align-self: flex-start;
         @include adaptiv-value("margin-bottom", 24, 32, 0);
     }
 
@@ -53,6 +52,20 @@
         color: $blue-400;
         font-size: 15px;
         line-height: 1.2;
+        transition: opacity 0.3s, box-shadow 0.3s, color 0.3s;
+
+        &:focus {
+            box-shadow: 0 0 0 2px $red-800;
+            border-radius: 3px;
+        }
+
+        &:hover {
+            color: $red-800;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
     }
 }
 
@@ -71,5 +84,19 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        transition: opacitu 0.3s, box-shadow 0.3s;
+
+        &:focus {
+            box-shadow: 0 0 0 2px $red-800;
+            border-radius: 3px;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
     }
 }
