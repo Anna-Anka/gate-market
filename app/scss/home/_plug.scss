@@ -3,7 +3,8 @@
 
     &__title {
         max-width: 822px;
-        margin: 0 auto 40px;
+        margin: 0 auto;
+        @include adaptiv-value("margin-bottom", 59, 32, 0);
         color: $white;
         text-align: center;
     }

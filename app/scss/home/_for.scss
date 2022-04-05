@@ -1,4 +1,5 @@
 .for {
+    @include adaptiv-value("padding-bottom", 58, 40, 0);
 
     &__subtitle {
         font-size: 20px;
@@ -7,12 +8,7 @@
     }
 
     &__items {
-        // display: grid;
-        // grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
-        // grid-template-rows: 350px 536px 316px 496px;
-        // gap: 32px 20px;
-        //  grid-auto-rows: 0;
-        // margin-right: -20px;
+        margin-bottom: -32px;
     }
 
     &__item {
@@ -20,7 +16,11 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 32px;
-        // margin-right: 20px;
+        width: 23.8%;
+
+        @include max-w($md) {
+            width: 47%;
+        }
     }
 
     &__name {
@@ -30,10 +30,13 @@
 
     &__img {
         border-radius: 20px;
-        margin-bottom: 16px;
-        max-width: 305px;
+        @include adaptiv-value("margin-bottom", 20, 12, 0);
         width: 100%;
-        // height: 100%;
+        height: 100%;
         object-fit: contain;
+
+        @include max-w($md) {
+            border-radius: 16px;
+        }
     }
 }

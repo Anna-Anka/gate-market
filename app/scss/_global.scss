@@ -28,6 +28,12 @@ body {
     line-height: 1.4;
     background-color: $red-800;
     border-radius: 8px;
+    @include adaptiv-value("font-size", 20, 17, 0);
+
+    &--white {
+        background-color: $white;
+        color: $dark-800;
+    }
 
     @include max-w($sm) {
         padding: 10px 18px;
@@ -36,21 +42,24 @@ body {
 
 .logo {
     vertical-align: middle;
+    transition: box-shadow 0.3s, opacity 0.3s;
 
     &--gray {
         filter: invert(63%) sepia(13%) saturate(1083%) hue-rotate(164deg) brightness(100%) contrast(86%);
     }
 
     &__img {
-        max-width: 206px;
-        height: 40px;
+        @include adaptiv-value("max-width", 206, 124, 0);
+        @include adaptiv-value("height", 40, 24, 0);
         object-fit: contain;
+
         &--small {
             width: 82px;
             height: 15px;
         }
     }
 }
+
 
 .sr-only {
 	position: absolute;
@@ -66,8 +75,10 @@ body {
 }
 
 .section {
-    padding: 60px 0;
     text-align: center;
+    @include adaptiv-value("padding", 60, 40, 0);
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .line {
@@ -87,7 +98,7 @@ body {
 .title {
     margin-bottom: 12px;
     font-weight: $fw-400;
-    font-size: 40px;
+    @include adaptiv-value("font-size", 40, 20, 0);
     line-height: 1.2;
 }
 

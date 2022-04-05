@@ -1,13 +1,31 @@
 .header {
-    padding-top: 21px;
+    padding: 21px 0 48px;
     background-color: $red-800;
     color: $white;
 
+    @include max-w($lg) {
+        position: relative;
+        padding: 0;
+    }
+
     &__navigation {
+        margin-bottom: 10px;
+
+        @include max-w($lg) {
+            position: absolute;
+            z-index: 1;
+            top: 12px;
+            width: 100%;
+        }
+    }
+
+    &__content {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        margin-bottom: 15px;
+    }
+
+    &__logo {
+        @include adaptiv-value("margin-right", 218, 0, 0);
     }
 
     &__link {
@@ -19,15 +37,50 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-left: auto;
+
+        @include max-w($sm) {
+            display: none;
+        }
+
+        &--mobail {
+            display: none;
+
+            @include max-w($sm) {
+                display: block;
+            }
+        }
+        
     }
 
     &__wrapper {
         background-position: bottom;
         background-size: cover;
         background-repeat: no-repeat;
-        height: 673px;
+        @include adaptiv-value("height", 673, 472, 0);
         border-radius: 30px;
         position: relative;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        @include max-w($lg) {
+            border-radius: 0;
+        }
+
+        @include max-w($sm) {
+            background-position: 57% bottom;
+        }
+
+        &::before {
+            @include max-w($lg) {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($black, 0.4);
+            }
+        }
     }
 
     &__title {
@@ -39,13 +92,25 @@
         padding: 33px 30px 20px 17px;
         font-weight: $fw-400;
         border-top-right-radius: 50px;
-        @include line-clamp(35px, 1.4, 4);
+        @include adaptiv-value("font-size", 35, 24, 0);
+
+        @include max-w($lg) {
+            max-width: 100%;
+            border-radius: 0;
+            background-color: transparent;
+            bottom: 32px;
+            padding: 0 16px;
+        }
     }
 }
 
 .menu {
     display: flex;
     line-height: 1.4;
+
+    @include max-w($lg) {
+        display: none;
+    }
 
     &__item {
         &:not(:last-child) {

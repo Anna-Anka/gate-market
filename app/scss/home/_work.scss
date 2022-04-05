@@ -2,6 +2,10 @@
     padding: 80px 0 60px;
     text-align: center;
 
+    @include max-w($md) {
+        padding-top: 0;
+    }
+
     &__wrapper {
         max-width: 1134px;
         margin: 0 auto;
@@ -10,20 +14,32 @@
     &__subtitle {
         max-width: 678px;
         margin: 0 auto 40px;
-        font-size: 28px;
+        @include adaptiv-value("font-size", 28, 20, 0);
+
+        @include max-w($md) {
+            background-color: $red-800;
+            padding: 32px 16px;
+            color: $white;
+            max-width: 100%;
+        }
     }
 
     &__items {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 40px;
+        @include adaptiv-value("margin-bottom", 63, 40, 0);
+
+        @include max-w($md) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__item {
         position: relative;
         width: 100%;
         max-width: 316px;
-        padding-top: 146px;
+        @include adaptiv-value("padding-top", 182, 125, 0);
 
         &--content::before {
             background-image: url("../img/work/content.svg");
@@ -39,10 +55,10 @@
 
         &::before {
             position: absolute;
-            top: 0;
+            top: 28px;
             left: 50%;
-            width: 160px;
-            height: 114px;
+            @include adaptiv-value("width", 160, 115, 0);
+            @include adaptiv-value("height", 114, 80, 0);
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -52,11 +68,16 @@
 
         &:not(:last-child) {
             margin-right: 15px;
+
+            @include max-w($md) {
+                margin-right: 0;
+                margin-bottom: 40px;
+            }
         }
     }
 
     &__title {
         font-weight: $fw-500;
-        font-size: 20px; 
+        @include adaptiv-value("font-size", 20, 17, 0);
     }
 }

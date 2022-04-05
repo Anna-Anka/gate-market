@@ -1,18 +1,41 @@
 .earn {
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include max-w($lg) {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &__wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include max-w($lg) {
+            flex-direction: column-reverse;
+        }
     }
 
     &__content {
         margin-right: 20px;
         text-align: left;
+
+        @include max-w($lg) {
+            padding: 0 15px;
+            text-align: center;
+        }
     }
 
     &__title {
         max-width: 620px;
-        margin-bottom: 40px;
+        @include adaptiv-value("margin-bottom", 40, 32, 0);
+    }
+
+    &__button {
+        @include adaptiv-value("font-size", 17, 15, 0);
     }
 
     &__image {
@@ -21,6 +44,15 @@
         height: 546px;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: contain;
+        border-radius: 30px;
+
+        @include max-w($lg) {
+            max-width: 100%;
+            background-size: cover;
+            background-position: center top;
+            border-radius: 0;
+            margin-bottom: 32px;
+        }
     }
 }
