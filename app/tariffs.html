@@ -118,50 +118,54 @@
     </div>
 </section>
     <section class="accept">
-    <div class="accept__top">
-        <h2 class="accept__title">
-            Подтверждение подписки
-        </h2>
-        <button class="accept__close" type="button">
-            <span class="sr-only">Закрыть окнок</span>
-        </button>
+    <div class="accept__body">
+        <div class="accept__content">
+            <div class="accept__top">
+                <h2 class="accept__title">
+                    Подтверждение подписки
+                </h2>
+                <button class="accept__close" type="button">
+                    <span class="sr-only">Закрыть окнок</span>
+                </button>
+            </div>
+            <dl class="accept__list">
+                <dd class="accept__name">
+                    Канал
+                </dd>
+                <dt class="accept__descr accept__descr--big">
+                    Guitar Master
+                </dt>
+                <dd class="accept__name">
+                    Тарифный план
+                </dd>
+                <dt class="accept__descr">
+                    Месяц беспредела
+                </dt>
+                <dd class="accept__name">
+                    Стоимость
+                </dd>
+                <dt class="accept__descr">
+                    1000 ₽/день
+                </dt>
+            </dl>
+            <form class="accept__form" action="#">
+                <div class="accept__inner">
+                    <label class="accept__label" for="accept-email">
+                        Email для доступа к управлению подписками
+                    </label>
+                    <input class="accept__field" type="email" id="accept-email" name="email" placeholder="info@domain.com" required>
+                </div>
+                <div class="accept__subtext">
+                    <p>
+                        Выбирая тарифный план вы соглашаетесь с <a class="link" href="#">правилами пользования</a> и&nbsp<a class="link" href="#">политикой конфиденциальности</a>
+                    </p>
+                </div>
+                <button class="accept__btn button" type="submit">
+                    Оплатить
+                </button>
+            </form>
+        </div>
     </div>
-    <dl class="accept__list">
-        <dd class="accept__name">
-            Канал
-        </dd>
-        <dt class="accept__descr accept__descr--big">
-            Guitar Master
-        </dt>
-        <dd class="accept__name">
-            Тарифный план
-        </dd>
-        <dt class="accept__descr">
-            Месяц беспредела
-        </dt>
-        <dd class="accept__name">
-            Стоимость
-        </dd>
-        <dt class="accept__descr">
-            1000 ₽/день
-        </dt>
-    </dl>
-    <form class="accept__form" action="#">
-        <div class="accept__inner">
-            <label class="accept__label" for="accept-email">
-                Email для доступа к управлению подписками
-            </label>
-            <input class="accept__field" type="email" id="accept-email" name="email" placeholder="info@domain.com" required>
-        </div>
-        <div class="accept__subtext">
-            <p>
-                Выбирая тарифный план вы соглашаетесь с <a class="link" href="#">правилами пользования</a> и&nbsp<a class="link" href="#">политикой конфиденциальности</a>
-            </p>
-        </div>
-        <button class="accept__btn button" type="submit">
-            Оплатить
-        </button>
-    </form>
 </section>
 </main>
 <footer class="footer-small">

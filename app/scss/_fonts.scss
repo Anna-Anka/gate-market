@@ -10,10 +10,9 @@
 }
 
 //Roboto
-@include font-face(Roboto, Roboto-Bold, 700) @include font-face(Roboto, Roboto-Bold, 700);
-@include font-face(Roboto, Roboto-Medium, 500) @include font-face(Roboto, Roboto-Medium, 500);
-@include font-face(Roboto, Roboto-Regilar, 400) @include font-face(Roboto, Roboto-Regilar, 400);
-
+@include font-face(Roboto, Roboto-Bold, 700);
+@include font-face(Roboto, Roboto-Medium, 500);
+@include font-face(Roboto, Roboto-Regular, 400);
 //Ubuntu
-@include font-face(Ubuntu, Ubuntu-Medium, 500) @include font-face(Ubuntu, Ubuntu-Medium, 500); 
-@include font-face(Ubuntu, Ubuntu-Regilar, 400) @include font-face(Ubuntu, Ubuntu-Regilar, 400);
+@include font-face(Ubuntu, Ubuntu-Medium, 500);
+@include font-face(Ubuntu, Ubuntu-Regular, 400);

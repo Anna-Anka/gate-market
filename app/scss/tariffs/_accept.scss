@@ -1,126 +1,143 @@
 .accept {
-    position: absolute;
-    top: 227px;
-    left: 50%;
+    z-index: 150;
     display: none;
-    max-width: 560px;
-    padding: 24px;
-    background-color: $white;
-    border-radius: 20px;
-    transform: translate(-50%);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
 
-    &--active {
+	&--active {
+        position: fixed;
+        top: 0;
+        left: 0;
         display: block;
     }
-
-    &__top {
-        display: flex;
-        justify-content: space-between;
-        @include adaptiv-value("margin-bottom", 20, 15, 0);
-    }
-
-    &__title {
-        margin-right: 10px;
-        font-weight: $fw-400;
-        @include adaptiv-value("font-size", 28, 24, 0);
-    }
     
-    &__close {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        background-image: url("../img/sprite.svg#close-icon");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        transition: filter 0.3s, opacity 0.3s, box-shadow 0.3s;
-
-        &:focus {
-            box-shadow: 0 0 0 2px $red-800;
-            border-radius: 4px;
-        }
-
-        &:hover {
-            filter: invert(29%) sepia(100%) saturate(3687%) hue-rotate(332deg) brightness(93%) contrast(89%);
-        }
-
-        &:active {
-            opacity: 0.5;
-        }
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+        padding: 20px 10px;
     }
 
-    &__list {
-        @include adaptiv-value("margin-bottom", 20, 15, 0);
-    }
-
-    &__name {
-       margin-bottom: 2px; 
-       color: $gray-400;
-       font-size: 14px;
-       line-height: 1.7;
-    }
-
-    &__descr {
-        &:not(:last-child) {
-            @include adaptiv-value("margin-bottom", 20, 15, 0);
-        }
-
-        &--big {
-            font-weight: $fw-500;
-            font-size: 20px;
-        }
-    }
-
-    &__inner {
+    &__content {
         position: relative;
-        @include adaptiv-value("margin-bottom", 20, 15, 0);
-        padding: 24px 0;
-        @include adaptiv-value("padding-top", 24, 15, 0);
-        @include adaptiv-value("padding-bottom", 24, 15, 0);
-
-        &::before,
-        &::after {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: rgba($black, 0.12);
-            content: "";
-        }
-
-        &::before {
-            top: 0;
-        }
-
-        &::after {
-            bottom: 0;
-        }
-    }
-
-    &__label {
-        margin-bottom: 4px;
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    &__field {
         width: 100%;
-        padding: 10px 12px;
-        border: 1px solid rgba($black, 0.24);
-        border-radius: 5px;
-        transition: border-color 0.3s;
-
-        &::placeholder {
-            color: $gray-400;
-        }
-
-        &:focus {
-            border-color: $blue-700;
-        }
+        max-width: 560px;
+        padding: 20px;
+        background-color: $white;
+        border-radius: 15px;
     }
 
-    &__subtext {
-        @include adaptiv-value("margin-bottom", 20, 15, 0);
-        font-size: 14px;
-    }
+	&__top {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		margin-right: 10px;
+		font-weight: $fw-400;
+		@include adaptiv-value('font-size', 28, 24, 0);
+	}
+
+	&__close {
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background-image: url('../img/sprite.svg#close-icon');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		transition: filter 0.3s, opacity 0.3s, box-shadow 0.3s;
+
+		&:focus {
+			border-radius: 4px;
+			box-shadow: 0 0 0 2px $red-800;
+		}
+
+		&:hover {
+			filter: invert(29%) sepia(100%) saturate(3687%) hue-rotate(332deg)
+				brightness(93%) contrast(89%);
+		}
+
+		&:active {
+			opacity: 50%;
+		}
+	}
+
+	&__list {
+		@include adaptiv-value('margin-bottom', 20, 15, 0);
+	}
+
+	&__name {
+		margin-bottom: 2px;
+		color: $gray-400;
+		font-size: 14px;
+		line-height: 1.7;
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			@include adaptiv-value('margin-bottom', 20, 15, 0);
+		}
+
+		&--big {
+			font-weight: $fw-500;
+			font-size: 20px;
+		}
+	}
+
+	&__inner {
+		position: relative;
+		@include adaptiv-value('margin-bottom', 20, 15, 0);
+
+		padding: 24px 0;
+		@include adaptiv-value('padding-top', 24, 15, 0);
+		@include adaptiv-value('padding-bottom', 24, 15, 0);
+
+		&::before,
+		&::after {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: rgba($black, 0.12);
+			content: '';
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+	}
+
+	&__label {
+		margin-bottom: 4px;
+		font-size: 14px;
+		line-height: 1.7;
+	}
+
+	&__field {
+		width: 100%;
+		padding: 10px 12px;
+		border: 1px solid rgba($black, 0.24);
+		border-radius: 5px;
+		transition: border-color 0.3s;
+
+		&::placeholder {
+			color: $gray-400;
+		}
+
+		&:focus {
+			border-color: $blue-700;
+		}
+	}
+
+	&__subtext {
+		@include adaptiv-value('margin-bottom', 20, 15, 0);
+		font-size: 14px;
+	}
 }

@@ -1,147 +1,151 @@
 body {
-    color: $black;
-    font-weight: 400;
-    font-size: 17px;
-    font-family: $ubuntu;
-    line-height: 1.3;
-    background-color: $white;
+	color: $black;
+	font-weight: 400;
+	font-size: 17px;
+	font-family: $ubuntu;
+	line-height: 1.3;
+	background-color: $white;
 }
 
 .container {
-    max-width: 1310px;
-    margin: 0 auto;
-    padding: 0 15px;
+	max-width: 1310px;
+	margin: 0 auto;
+	padding: 0 15px;
 }
 
 .wrapper {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .lock {
-    overflow: hidden;
-    background-color: rgba($black, 0.6);
+	overflow: hidden;
+	background-color: rgba($black, 0.6);
 }
 
 .button {
-    padding: 12px 20px;
-    color: $white;
-    line-height: 1.4;
-    background-color: $red-800;
-    border-radius: 8px;
-    @include adaptiv-value("font-size", 20, 17, 0);
-    border: 1px solid transparent;
-    transition: background-color 0.5s, border-color 0.3s, color 0.3s, opacity 0.3s;
+	padding: 12px 20px;
+	color: $white;
+	line-height: 1.4;
+	background-color: $red-800;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	transition: background-color 0.5s, border-color 0.3s, color 0.3s, opacity 0.3s;
+	@include adaptiv-value('font-size', 20, 17, 0);
 
-    &:focus {
-        background-color: transparent;
+	&:focus {
+		color: $red-800;
+		background-color: transparent;
+		border-color: $red-800;
+	}
+
+	&:hover {
+		color: $red-800;
+		background-color: $white;
         border-color: $red-800;
-        color: $red-800
-    }
+	}
 
-    &:hover {
-        background-color: $white;
-        color: $red-800;
-    }
+	&:active {
+		opacity: 50%;
+	}
 
-    &:active {
-        opacity: 0.5;
-    }
+	&--white {
+		color: $dark-800;
+		background-color: $white;
 
-    &--white {
-        background-color: $white;
-        color: $dark-800;
+		&:focus {
+			color: $white;
+			background-color: transparent;
+			border-color: $white;
+		}
+	}
 
-        &:focus {
-            color: $white;
-            border-color: $white;
-            background-color: transparent;
-        }
-    }
-
-    @include max-w($sm) {
-        padding: 10px 18px;
-    }
+	@include max-w($sm) {
+		padding: 10px 18px;
+	}
 }
 
 .logo {
-    vertical-align: middle;
-    transition: box-shadow 0.3s, opacity 0.3s;
+	vertical-align: middle;
+	transition: box-shadow 0.3s, opacity 0.3s;
 
-    &--gray {
-        filter: invert(63%) sepia(13%) saturate(1083%) hue-rotate(164deg) brightness(100%) contrast(86%);
-    }
+	&--gray {
+		filter: invert(63%) sepia(13%) saturate(1083%) hue-rotate(164deg)
+			brightness(100%) contrast(86%);
+	}
 
-    &:focus {
-        box-shadow: 0 0 0 2px $white;
-        border-radius: 3px;
-    }
+	&:focus {
+		border-radius: 3px;
+		box-shadow: 0 0 0 2px $white;
+	}
 
-    &:hover {
-        opacity: 0.7;
-    }
+	&:hover {
+		opacity: 70%;
+	}
 
-    &:active {
-        opacity: 0.5;
-    }
+	&:active {
+		opacity: 50%;
+	}
 
-    &__img {
-        @include adaptiv-value("max-width", 206, 124, 0);
-        @include adaptiv-value("height", 40, 24, 0);
-        object-fit: contain;
+	&__img {
+		@include adaptiv-value('max-width', 206, 124, 0);
+		@include adaptiv-value('height', 40, 24, 0);
 
-        &--small {
-            width: 82px;
-            height: 15px;
-        }
+		object-fit: contain;
 
-        &--footer {
-            width: 150px;
-            height: 28px;
-        }
-    }
+		&--small {
+			width: 82px;
+			height: 15px;
+		}
+
+		&--footer {
+			width: 150px;
+			height: 28px;
+		}
+	}
 }
 
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(100%);
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
 }
 
 .section {
-    text-align: center;
-    @include adaptiv-value("padding", 60, 40, 0);
-    padding-right: 0;
-    padding-left: 0;
+	padding-right: 0;
+	padding-left: 0;
+	text-align: center;
+	@include adaptiv-value('padding', 60, 40, 0);
 }
 
 .title {
-    margin-bottom: 12px;
-    font-weight: $fw-400;
-    @include adaptiv-value("font-size", 40, 20, 0);
-    line-height: 1.2;
+	margin-bottom: 12px;
+	font-weight: $fw-400;
+	@include adaptiv-value('font-size', 40, 20, 0);
+
+	line-height: 1.2;
 }
 
 .link {
-    color: $blue-700;
-    transition: color 0.3s, box-shadow 0.3s, opacity 0.3s;
+	color: $blue-700;
+	transition: color 0.3s, box-shadow 0.3s, opacity 0.3s;
 
-    &:focus {
-        box-shadow: 0 0 0 2px $red-800;
-        border-radius: 4px;
-    }
+	&:focus {
+		border-radius: 4px;
+		box-shadow: 0 0 0 2px $red-800;
+	}
 
-    &:hover {
-        color: $red-800;
-    }
+	&:hover {
+		color: $red-800;
+	}
 
-    &:active {
-        opacity: 0.5;
-    }
+	&:active {
+		opacity: 50%;
+	}
 }
